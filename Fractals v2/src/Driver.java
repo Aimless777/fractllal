@@ -20,7 +20,8 @@ public class Driver extends JPanel implements ActionListener {
 	}// end of paint method - put code above for anything dealing with drawing -
 
 	public void clover(Graphics g, int radius, int x, int y) {
-
+// need this code! What a test hahahahahahahahaha
+		System.out.println("amongus is a bad game");
 	
 
 	}
