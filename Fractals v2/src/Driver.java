@@ -11,10 +11,11 @@ import javax.swing.Timer;
 public class Driver extends JPanel implements ActionListener {
 
 	/* Attributes a.k.a. Instance Variables */
-	int w = 800, h = 800;
-
+	int w = 729, h = 729;
 	public void paint(Graphics g) {
 		super.paintComponent(g);
+		g.setColor(Color.black);
+		g.fillRect(0, 0, 1000, 1000);
 		
 		//Rings cuhhhhhh
 //		rings(g, 200, 0, 200);
@@ -24,7 +25,11 @@ public class Driver extends JPanel implements ActionListener {
 		
 		
 		//serpinski triyangle
-		//SierpinskiTriangle(g, 200, 500, 250);
+		//SierpinskiTriangle(g, 200, 500, 500);
+		
+		//Squares
+		squares(g, 0, 0, 729 );
+		
 		
 
 	}// end of paint method - put code above for anything dealing with drawing -
@@ -80,6 +85,33 @@ public class Driver extends JPanel implements ActionListener {
 		}
 
 	}
+	
+	
+	public void squares(Graphics g, int x, int y, double size) {
+		if(size<=9)
+			return;
+		g.setColor(Color.white);
+		size /= 3.0;
+		g.fillRect(x+(int)size, y+(int)size, (int)size, (int)size);
+		squares(g, x, y, size);
+		squares(g, (int)(x+size), y, size);
+		squares(g, (int)(x+2*size), y, size);
+		squares(g, x, (int)(y+size), size);
+		squares(g, (int)(x+2*size), (int)(y+size), size);
+		squares(g, x, (int)(y+2*size), size);
+		squares(g, (int)(x+size),(int)(y+2*size), size);
+		squares(g, (int)(x+2*size), (int)(y+2*size), size);
+	
+	}
+	
+	//Danials RGB COde!!
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * Update the positions of the ball and paddle. Update the scores, counter
 	 * and time
